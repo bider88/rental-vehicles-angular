@@ -1,3 +1,4 @@
+import { VehiclesService } from './public/vehicles/services/vehicles.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,7 +19,9 @@ import { VehiclesComponent } from './public/vehicles/vehicles.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    VehiclesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
