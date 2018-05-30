@@ -8,6 +8,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { HomeComponent } from './public/home/home.component';
 import { VehiclesComponent } from './public/vehicles/vehicles.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GetImageUrlPipe } from './common/pipes/get-image-url.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    VehiclesComponent
+    VehiclesComponent,
+    GetImageUrlPipe
   ],
   imports: [
     BrowserModule,
