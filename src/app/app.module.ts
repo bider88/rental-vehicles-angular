@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginFormComponent } from './public/login/login-form/login-form.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AuthHomeComponent } from './auth/auth-home/auth-home.component';
+import { SessionStorageService } from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AuthHomeComponent } from './auth/auth-home/auth-home.component';
     AppRoutingModule
   ],
   providers: [
-    VehiclesService
+    VehiclesService,
+    SessionStorageService
   ],
   bootstrap: [AppComponent]
 })
