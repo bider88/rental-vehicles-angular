@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,9 @@ export class HeaderComponent implements OnInit {
 
   isModalActive = false;
 
-  constructor() { }
+  constructor(
+    public authService: AuthenticationService
+  ) { }
 
   ngOnInit() {
   }

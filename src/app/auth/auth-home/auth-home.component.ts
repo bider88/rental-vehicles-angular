@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Vehicle } from './../../public/vehicles/models/vehicle.model';
+import { VehiclesService } from '../../public/vehicles/services/vehicles.service';
 
 @Component({
   selector: 'app-auth-home',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthHomeComponent implements OnInit {
 
-  constructor() { }
+  myVehicles: Array<Vehicle> = [];
+
+  constructor(
+    public vehiclesService: VehiclesService
+  ) { }
 
   ngOnInit() {
+    this.vehiclesService.getVehiclesUsingToken().subscribe(
+      vehicles => this.myVehicles = vehicles,
+      error => console.log(error)
+    );
   }
 
 }

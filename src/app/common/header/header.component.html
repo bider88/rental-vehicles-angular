@@ -19,10 +19,10 @@
         </div>
 
         <div class="navbar-end">
-          <a class="navbar-item" (click)="toggleModal()">
+          <a class="navbar-item" (click)="toggleModal()" *ngIf="!authService.isLoggedIn()">
             Login
           </a>
-          <a class="navbar-item">
+          <a class="navbar-item" *ngIf="authService.isLoggedIn()">
             Logout
           </a>
         </div>
