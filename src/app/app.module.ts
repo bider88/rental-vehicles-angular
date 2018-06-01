@@ -1,4 +1,3 @@
-import { VehiclesService } from './public/vehicles/services/vehicles.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +8,9 @@ import { HomeComponent } from './public/home/home.component';
 import { VehiclesComponent } from './public/vehicles/vehicles.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GetImageUrlPipe } from './common/pipes/get-image-url.pipe';
+import { VehiclesService } from './public/vehicles/services/vehicles.service';
+import { FormsModule } from '@angular/forms';
+import { LoginFormComponent } from './public/login/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { GetImageUrlPipe } from './common/pipes/get-image-url.pipe';
     FooterComponent,
     HomeComponent,
     VehiclesComponent,
-    GetImageUrlPipe
+    GetImageUrlPipe,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [

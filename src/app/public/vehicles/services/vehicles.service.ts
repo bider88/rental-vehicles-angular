@@ -2,6 +2,7 @@ import { Vehicle } from './../models/vehicle.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { API } from '../../../config/api';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class VehiclesService {
   ) { }
 
   getVehicles(): Observable<Array<Vehicle>> {
-    const apiVehiclesURL = `http://rentals-api.webtraining.fun/api/vehicles`;
+    const apiVehiclesURL = `${API.DATA_SERVICES_BASE_URL}/vehicles`;
     return this.http.get<Array<Vehicle>>(apiVehiclesURL);
   }
 
