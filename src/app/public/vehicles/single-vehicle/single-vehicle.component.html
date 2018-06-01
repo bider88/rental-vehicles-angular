@@ -40,7 +40,11 @@
         <br>
 
         <div class="b-vehicle__b-rented-information" *ngIf="vehicle.rented">
-          <span class="b-vehicle__rented">Rented</span>
+          <span class="b-vehicle__btn__rented">Rented</span>
+        </div>
+
+        <div class="b-vehicle__b-rent-information" *ngIf="!vehicle.rented">
+          <a class="b-vehicle__btn" (click)="rentVehicle(vehicle)">Rent</a>
         </div>
       </div>
     </div>

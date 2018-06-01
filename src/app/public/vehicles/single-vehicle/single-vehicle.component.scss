@@ -39,13 +39,25 @@
     }
   }
 
-  &__rented {
+  &__btn {
     background: $color-primary;
+    color: black;
     border-radius: 5px;
     font-size: 7px;
     font-weight: 700;
     letter-spacing: 1px;
     padding: 7px 7px 9px 10px;
     text-transform: uppercase;
+
+    &__rented {
+      background: rgb(162, 162, 162);
+      color: white;
+      border-radius: 5px;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 7px 7px 9px 10px;
+      text-transform: uppercase;
+    }
   }
 }

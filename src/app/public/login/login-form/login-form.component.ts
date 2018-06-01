@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../../common/services/authentication.service';
 import { SessionStorageService } from 'ngx-webstorage';
 import { Router } from '@angular/router';
+import { AfterLoginActionsService } from '../../../common/services/after-login-actions.service';
 
 @Component({
   selector: 'app-login-form',
@@ -18,6 +19,7 @@ export class LoginFormComponent implements OnInit {
   constructor(
     public authService: AuthenticationService,
     public sessionStorage: SessionStorageService,
+    public afterLoginService: AfterLoginActionsService,
     public router: Router
   ) { }
 
@@ -26,13 +28,14 @@ export class LoginFormComponent implements OnInit {
 
   onSubmit(event: Event) {
     event.preventDefault();
-    console.log('Send Post request with form');
     this.authService.login(this.user.email, this.user.password).subscribe(
       data => {
         console.log(data);
         this.authService.user = data;
         this.authService.hasSession = true;
         this.sessionStorage.store('user', data);
+
+        this.afterLoginService.onLoginCompleted.emit('Done');
 
         this.router.navigate(['/auth-home']);
       },

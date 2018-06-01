@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Vehicle } from '../models/vehicle.model';
 
 @Component({
@@ -9,10 +9,15 @@ import { Vehicle } from '../models/vehicle.model';
 export class SingleVehicleComponent implements OnInit {
 
   @Input() vehicle: Vehicle;
+  @Output() rentOneVehicle = new EventEmitter<Vehicle>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  rentVehicle(vehicle) {
+    this.rentOneVehicle.emit(vehicle);
   }
 
 }

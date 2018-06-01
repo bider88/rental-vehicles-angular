@@ -18,8 +18,7 @@ export class VehiclesComponent implements OnInit {
   ngOnInit() {
     this.vehicleService.getVehicles().subscribe(
       response => this.vehicles =  response,
-      error => console.log(error),
-      () => console.log('Finished!')
+      error => console.log(error)
     );
   }
 

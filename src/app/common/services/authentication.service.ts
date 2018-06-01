@@ -2,6 +2,7 @@ import { API } from './../../config/api';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SessionStorageService } from 'ngx-webstorage';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class AuthenticationService {
 
   constructor(
     public http: HttpClient,
-    public sessionStorage: SessionStorageService
+    public sessionStorage: SessionStorageService,
+    public router: Router
   ) { }
 
   public isLoggedIn() {
@@ -31,5 +33,11 @@ export class AuthenticationService {
       email,
       password
     });
+  }
+
+  public logout() {
+    this.hasSession = false;
+    this.sessionStorage.clear('user');
+    this.router.navigateByUrl('/home');
   }
 }

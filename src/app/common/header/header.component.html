@@ -22,7 +22,7 @@
           <a class="navbar-item" (click)="toggleModal()" *ngIf="!authService.isLoggedIn()">
             Login
           </a>
-          <a class="navbar-item" *ngIf="authService.isLoggedIn()">
+          <a class="navbar-item" (click)="logout()" *ngIf="authService.isLoggedIn()">
             Logout
           </a>
         </div>
